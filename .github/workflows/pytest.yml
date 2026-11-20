@@ -1,23 +1,22 @@
 name: Run pytest
 
-
-on: #trigger the workflow
+on:
   push:
 
-jobs: 
-  test: #job name is "test"
+jobs:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get the code #Downloads code from my repo. 
+      - name: Get the code
         uses: actions/checkout@v4
 
-      - name: Set up Python #Check if python is installed.
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install dependencies #install dependancies & libaries. 
+      - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Run pytest #runs the pytest command
+      - name: Run pytest
         run: python -m pytest -v --cov=src --cov-report=term-missing
