@@ -11,9 +11,9 @@ from src.parcel_fee import delivery_fee
         (1, 500),        # bottom of the light band
         (500, 500),
         (1000, 500),     # top of the light band (inclusive)
-        (1001, 1000),    # bottom of the heavy band
+        (1001, 1000),   
         (10000, 1000),
-        (20000, 1000),   # top of the heavy band (inclusive)
+        (20000, 1000),  
     ],
 )
 def test_valid_weight_returns_correct_fee(weight_grams, expected_fee):
